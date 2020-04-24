@@ -17,7 +17,7 @@ pipeline {
             }
             post {
        		   always {
-          		    junit '**/build/reports/e2e/*.xml'
+          		    junit '**/build/reports/karma/*.xml'
         	    }
             }
         } 
