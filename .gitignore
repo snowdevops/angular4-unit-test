@@ -31,7 +31,9 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+package-lock.json
 /typings
+/build
 
 # e2e
 /e2e/*.js

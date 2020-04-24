@@ -2,6 +2,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+const JasmineReporters = require('jasmine-reporters');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -24,5 +25,8 @@ exports.config = {
       project: 'e2e/tsconfig.e2e.json'
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new JasmineReporters.JUnitXmlReporter({
+      savePath: 'build/reports/e2e',
+      consolidateAll: false }));
   }
 };
