@@ -1,16 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage("Checkout code") {
+        stage("build") {
             steps {
                 snDevOpsStep()
                 checkout scm
+                sh 'ng build'
             }
         }
-        stage("Build and unit test") {
+        stage("unit test") {
             steps {
                 snDevOpsStep()
-                sh 'ng build'
+            
                 sh 'ng test'
             }
             post {
