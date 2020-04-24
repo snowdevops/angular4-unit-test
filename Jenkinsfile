@@ -5,6 +5,7 @@ pipeline {
             steps {
                 snDevOpsStep()
                 checkout scm
+                sh 'npm install'
                 sh 'ng build'
             }
         }
