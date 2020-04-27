@@ -24,7 +24,7 @@ pipeline {
         stage("e2e test") {
             steps {
                 snDevOpsStep()
-                sh 'ng serve'
+               // sh 'ng serve'
                 sh 'ng e2e'
             }
             post {
