@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("build") {
             steps {
-               // snDevOpsStep()
+                snDevOpsStep()
                 checkout scm
                 sh 'npm install'
                 sh 'ng build'
@@ -11,8 +11,7 @@ pipeline {
         }
         stage("unit test") {
             steps {
-                //snDevOpsStep()
-            
+                snDevOpsStep()
                 sh 'ng test'
             }
             post {
@@ -23,7 +22,7 @@ pipeline {
         } 
         stage("e2e test") {
             steps {
-                //snDevOpsStep()
+                snDevOpsStep()
                // sh 'ng serve'
                 sh 'ng e2e'
             }
